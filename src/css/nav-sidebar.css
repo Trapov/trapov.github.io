@@ -1,0 +1,30 @@
+@media screen and (min-width: 800px) {
+      
+  #nav-sidebar {
+    border-left-style: dotted;
+    position: fixed;
+    left: 70%;
+    top: 0px;
+    padding-left: 10px;
+    padding: 30px;
+  }
+
+  #nav-sidebar a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: large;
+    display: block;
+  }
+  
+  #nav-sidebar a:hover {
+    color: greenyellow;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 800px) {
+    
+  #nav-sidebar {
+    display: none;
+  }
+}

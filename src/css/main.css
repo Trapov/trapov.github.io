@@ -1,0 +1,8 @@
+body {
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+    font-family: Consolas,monaco,monospace; 
+  margin: 0px;
+  padding: 0px;
+}
