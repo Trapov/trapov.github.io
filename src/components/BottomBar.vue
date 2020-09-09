@@ -1,13 +1,13 @@
 <template>
   <div class="nav-bottombar">
-    <router-link to="/about-me">
-      @me
+    <router-link to="/">
+      📝
     </router-link>
     <router-link to="/my-projects">
-      @projects
+      👩‍💻
     </router-link>
     <router-link to="/where-i-worked">
-      @exp
+      ⚒
     </router-link>
   </div>
 </template>
@@ -24,23 +24,22 @@ export default {
     background-color: black;
     position: fixed;
     display: flex;
-    padding: 10px;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: flex-end;
     border-top-style: dotted;
     bottom: 0;
     width: 100%;
   }
 
   .nav-bottombar a {
+    background-color: brown;
     color: whitesmoke;
-    text-decoration: none;
+    border-left-style: dotted;
+    padding: 5px;
     font-size: x-large;
-    display: block;
+    text-decoration: none;
   }
   
-  .nav-bottombar a:hover {
-    color: greenyellow;
-    text-decoration: underline;
-  }
+
 
 </style>

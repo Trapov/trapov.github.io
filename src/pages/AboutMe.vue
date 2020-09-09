@@ -1,13 +1,13 @@
 <template>
-  <div class="about-me">
+  <div class="about-me container column">
     <h1 class="text-center">
       About me
     </h1>
-    <div class="container">
+    <div class="container row">
       <div class="center-if-sm avatar"></div>
       <div class="item-6">
         <p>
-          I guess there is no much to talk about. I was born in Russia [Orenburg City] [February 14th, 1995].
+          I'm <time-since :when="new Date('02:00 02-14-1995')" /> old software-enginer and live in Russia Orenburg.
           I've been dreaming about making a game myself since I was like 10 years old but haven't yet fullfilled my dream. 
         </p>
         <p>
@@ -22,8 +22,26 @@
 </template>
 
 <script>
+  import TimeSince from '../components/TimeSince.vue';
+
   export default {
-    name: 'AboutMe'
+    components: {
+      TimeSince
+    },
+    name: 'AboutMe',
+    data() {
+      return {
+        birthday: new Date('02-14-1995 02:00')
+      }
+    },
+    methods: {
+
+    },
+    computed: {
+      age() {
+        return this.timeSince(new Date(), this.birthday).seconds
+      }
+    }
   }
 </script>
 
@@ -33,8 +51,21 @@
   font-style: italic;
 }
 
-.text-center {
-  text-align: center;
+.container.column{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: stretch; */
+  align-items: center;
+}
+
+
+@media screen and (max-width: 350px) {
+  .about-me .avatar {
+    width: 116px !important;
+    height: 149px !important;
+
+    background-size: 116px 149px !important;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -43,13 +74,12 @@
   }
 
   .container {
-    padding: 20px;
+    padding: 0 8px 0 8px !important;
   }
 }
 @media screen and (min-width: 850px) {
 
   .container {
-  
     padding: 20px;
     display: flex;
   }
@@ -66,7 +96,31 @@
   border-color: aqua;
   cursor: pointer;
 }
+.about-me .avatar:hover::before {
+  background-color: aqua;
+  color: brown;
+}
+.about-me .avatar::before::after {
+  content: " ";
+    right: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid whitesmoke;
+    border-bottom: 7px solid transparent;
+    border-top: 7px solid whitesmoke;
+}
+.about-me .avatar::before {
+  position: absolute;
+  border-style: dotted;
+  border-color: black;
 
+  color:whitesmoke;
+  letter-spacing: 2px;
+  padding: 5px;
+  margin: 0px -15px 0px -25px;
+  transform: rotate(-45deg);
+  background-color: darkorchid;
+  content: 'Hired';
+}
 .about-me .avatar {
   margin-top: 35px;
   border-style: dashed;
