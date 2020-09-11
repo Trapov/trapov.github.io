@@ -1,8 +1,9 @@
 <template>
-  <span v-if="hover" class="hover-on-top">
-    {{'Born ' + when.toLocaleString()}}
+  <span ref="hovered" v-if="hover" class="hover-on-top">
+    {{'🐣' + when.toLocaleString()}}
   </span>
   <span     
+    @mousemove="moveHovered"
     @mouseover="hover = true"
     @mouseleave="hover = false" 
   class="hover-to-show-the-date">
@@ -24,6 +25,11 @@ export default {
        this.msSince =  (new Date()).valueOf()
     }, 60000);
   },
+  methods: {
+    moveHovered(e) {
+      this.$refs.hovered.style["margin-left"] = + e.offsetX - 200 + "px";
+    }
+  },
   computed: {
     timeSince() {
         var obj = {};
@@ -38,7 +44,7 @@ export default {
         obj._days = (obj._hours - obj.hours) / 24;
         obj.days = obj._days % 365;
         obj.years = (obj._days - obj.days) / 365;
-        return `${obj.years} years ${obj.days} days ${obj.hours} hours and ${obj.minutes} minutes`;
+        return `${obj.years}y ${obj.days}d ${obj.hours}h ${obj.minutes}m`;
     }
   },
   props: [
@@ -51,7 +57,7 @@ export default {
   .hover-on-top {
     z-index: 3;
     position: absolute;
-    margin: -55px 0px 0px 28px;
+    margin: -55px 0px 0px 0px;
     padding: 10px;
     background-color: black;
     border-style: dashed;
@@ -62,7 +68,6 @@ export default {
   }
   .hover-to-show-the-date {
     cursor: pointer;
-    font-style: italic;
     color: darkorchid;
   }
 </style>

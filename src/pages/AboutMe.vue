@@ -1,21 +1,78 @@
 <template>
-  <div class="about-me container column">
-    <h1 class="text-center">
+  <div class="about-me container column center">
+    <h1>
       About me
     </h1>
     <div class="container row">
-      <div class="center-if-sm avatar"></div>
+      <div class="container row column-if-md item-6">
+        <div style="align-items: center; justify-content: center;" class="container column row-if-md">
+          <div class="center-if-sm avatar"></div>
+          <div class="container row item-2 column-if-md">
+            <div>
+              <a href="https://github.com/Trapov">
+                <img class="icon" src="https://img.icons8.com/ios/50/000000/github.png"/>
+              </a>
+            </div>
+            <div>
+              <a href="https://vk.com/more_cry">
+                <img class="icon" src="https://img.icons8.com/ios/50/000000/vk-circled.png"/>
+              </a>
+            </div>
+            <div>
+              <a href="https://www.linkedin.com/in/dmitry-afonin-a48a0b163/">
+                <img class="icon" src="https://img.icons8.com/ios/50/000000/linkedin.png"/>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="item-2">
+          <p>
+            🧑: Dmitry Afonin 
+          </p>
+          <p>
+            🧓: <time-since :when="new Date('02:00 02-14-1995')" /> old
+          </p>
+          <p>
+            🌍: Russia Orenburg
+          </p>
+          <hr />
+          <p>
+            💕: Jazz, videogames and making the machines go brrr-brrr
+          </p>
+        </div>
+      </div>
       <div class="item-6">
-        <p>
-          I'm <time-since :when="new Date('02:00 02-14-1995')" /> old software-enginer and live in Russia Orenburg.
-          I've been dreaming about making a game myself since I was like 10 years old but haven't yet fullfilled my dream. 
-        </p>
-        <p>
-          Altho I'm trying.
-        </p>
-        <p>
-          Like to play jazz once in a while when I have free time. Apart from that I work hard making the machines go <span class="text-brr-brr">brrr-brrr</span>.
-        </p>
+        <ol class="hoverable-list red"> 
+          <li class="with-padding"> 
+              <span> 🎵 I'm sharp </span>
+                <ol class="hoverable-list green">
+                  <li> ASP.NET Core </li>
+                  <li> EF Core </li>
+                </ol> 
+          </li> 
+
+          <li class="with-padding"> 
+              <span> 🐍 Talk to snakes </span>
+                <ol class="hoverable-list green">
+                  <li> fastapi/aiohttp </li>
+                  <li> ML (pyTorch and openCV)</li>
+                </ol>
+          </li> 
+          <li class="with-padding"> 
+              <span> ☕ JS <eval-js evalExpression="'4'/2" /> </span>
+                <ol class="hoverable-list green">
+                  <li> Vue </li>
+                </ol>
+          </li>
+          <li class="with-padding"> 
+              <span> 🏗 Arch </span>
+                <ol class="hoverable-list green">
+                  <li> DDD </li>
+                  <li> CQS/CQRS, Microservices </li>
+                  <li> Event Sourcing </li>
+                </ol>
+          </li>
+        </ol>
       </div>
     </div>
   </div>
@@ -23,10 +80,12 @@
 
 <script>
   import TimeSince from '../components/TimeSince.vue';
+  import EvalJs from '../components/EvalJs.vue';
 
   export default {
     components: {
-      TimeSince
+      TimeSince,
+      EvalJs
     },
     name: 'AboutMe',
     data() {
@@ -46,15 +105,80 @@
 </script>
 
 <style scoped>
-.text-brr-brr {
-  color: darkorchid;
-  font-style: italic;
+
+.icon {
+  filter: invert(100%);
 }
 
-.container.column{
+.icon:hover {
+  cursor: pointer;
+  filter: invert(100%) contrast(0.5) sepia(1) !important;
+}
+
+@media screen and (max-width: 1250px) {
+  .column-if-md {
+    flex-flow: column !important;
+  }
+  .row-if-md {
+    flex-flow: row !important;
+  }
+}
+.top-right-text {
+  position: absolute;
+  margin-left: 5px;
+  margin-top: -5px;
+  font-size: 14px;
+}
+
+ol {
+  list-style: none;
+  counter-reset: steps;
+}
+ol li {
+  counter-increment: steps;
+  padding: 6px;
+}
+ol li::before {
+  content: counter(steps);
+  margin-right: 0.5rem;
+  background: brown;
+  color: whitesmoke;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  line-height: 1.2em;
+}
+ol ol li::before {
+  background: darkorchid;
+}
+
+.hoverable-list > li {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.hoverable-list .with-padding {
+  padding: 10px;
+}
+
+.hoverable-list.red > li > span:hover {
+  color: brown;
+}
+
+.hoverable-list.green > li:hover {
+  color: green;
+}
+
+.container.column {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  /* justify-content: stretch; */
+}
+
+
+.container.center {
   align-items: center;
 }
 
@@ -66,24 +190,43 @@
 
     background-size: 116px 149px !important;
   }
+
 }
 
-@media screen and (max-width: 850px) {
-  .about-me .avatar.center-if-sm {
-    margin: auto;
+@media screen and (max-width: 950px) {
+  .column-if-sm {
+    flex-flow: column !important;
   }
 
+  .row-if-sm {
+    flex-flow: row !important;
+  }
+
+  .hoverable-list .with-padding {
+    padding: 0px !important;
+  }
   .container {
     padding: 0 8px 0 8px !important;
   }
+
+
+  .hoverable-list > li{
+    cursor: pointer;
+    font-size: 16px !important;
+    margin-left: -15px;
+  }
+  
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 950px) {
 
   .container {
     padding: 20px;
     display: flex;
   }
 
+  .container .item-2 {
+    flex: 2;
+  }
   .container .item-4 {
     flex: 4;
   }

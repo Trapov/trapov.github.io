@@ -36,7 +36,7 @@ export default {
 body {
   background-color: black;
   color: whitesmoke;
-  font-size: 22px;
+  font-size: 18px;
   font-family: Consolas,monaco,monospace; 
   margin: 0px;
   padding: 0px;
