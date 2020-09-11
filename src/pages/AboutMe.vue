@@ -30,7 +30,7 @@
             🧑: Dmitry Afonin 
           </p>
           <p>
-            🧓: <time-since :when="new Date('02:00 02-14-1995')" /> old
+            🧓: <time-since :when="new Date('1995-02-14T02:00:00+0500')" /> old
           </p>
           <p>
             🌍: Russia Orenburg
