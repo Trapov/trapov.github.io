@@ -16,8 +16,8 @@
               </a>
             </div>
             <div>
-              <a href="https://vk.com/more_cry">
-                <img class="icon" src="https://img.icons8.com/ios/50/000000/vk-circled.png"/>
+              <a href="https://t.me/DmitryAAD">
+                <img class="icon" src="https://img.icons8.com/ios-filled/50/000000/telegram-app.png"/>
               </a>
             </div>
             <div>
