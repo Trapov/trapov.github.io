@@ -5,7 +5,7 @@ module.exports = {
   pages: {
     index: {
       entry: 'src/main.js',
-      title: 'Resumё'
+      title: 'Resumё @dmitry_afonin'
     }
   },
   configureWebpack: {
