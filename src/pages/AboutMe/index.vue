@@ -6,7 +6,9 @@
     <div class="container row">
       <div class="container row column-if-md item-6">
         <div style="align-items: center; justify-content: center;" class="container column row-if-md">
-          <div class="center-if-sm avatar"></div>
+          <div class="item-6">
+              <div class="avatar"></div>
+          </div>
           <div class="container row item-2 column-if-md">
             <div>
               <a href="https://github.com/Trapov">
@@ -33,6 +35,9 @@
             🧓: <time-since :when="new Date('1995-02-14T02:00:00+0500')" /> old
           </p>
           <p>
+            👩‍💻: Worked for <time-since :when="new Date('2017-02-14T02:00:00+0500')" />
+          </p>
+          <p>
             🌍: Russia Orenburg
           </p>
           <hr />
@@ -42,50 +47,20 @@
         </div>
       </div>
       <div class="item-6">
-        <ol class="hoverable-list red"> 
-          <li class="with-padding"> 
-              <span> 🎵 I'm sharp </span>
-                <ol class="hoverable-list green">
-                  <li> ASP.NET Core </li>
-                  <li> EF Core </li>
-                </ol> 
-          </li> 
-
-          <li class="with-padding"> 
-              <span> 🐍 Talk to snakes </span>
-                <ol class="hoverable-list green">
-                  <li> fastapi/aiohttp </li>
-                  <li> ML (pyTorch and openCV)</li>
-                </ol>
-          </li> 
-          <li class="with-padding"> 
-              <span> ☕ JS <eval-js evalExpression="'4'/2" /> </span>
-                <ol class="hoverable-list green">
-                  <li> Vue </li>
-                </ol>
-          </li>
-          <li class="with-padding"> 
-              <span> 🏗 Arch </span>
-                <ol class="hoverable-list green">
-                  <li> DDD </li>
-                  <li> CQS/CQRS, Microservices </li>
-                  <li> Event Sourcing </li>
-                </ol>
-          </li>
-        </ol>
+        <skills />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import TimeSince from '../components/TimeSince.vue';
-  import EvalJs from '../components/EvalJs.vue';
+  import TimeSince from '../../components/TimeSince.vue';
+  import Skills from './Skills';
 
   export default {
     components: {
       TimeSince,
-      EvalJs
+      Skills
     },
     name: 'AboutMe',
     data() {
@@ -112,7 +87,7 @@
 
 .icon:hover {
   cursor: pointer;
-  filter: invert(100%) contrast(0.5) sepia(1) !important;
+  filter: invert(100%) contrast(0.5) sepia(1) hue-rotate(89deg) !important;
 }
 
 @media screen and (max-width: 1250px) {
@@ -130,46 +105,7 @@
   font-size: 14px;
 }
 
-ol {
-  list-style: none;
-  counter-reset: steps;
-}
-ol li {
-  counter-increment: steps;
-  padding: 6px;
-}
-ol li::before {
-  content: counter(steps);
-  margin-right: 0.5rem;
-  background: brown;
-  color: whitesmoke;
-  width: 1.2em;
-  height: 1.2em;
-  border-radius: 50%;
-  display: inline-grid;
-  place-items: center;
-  line-height: 1.2em;
-}
-ol ol li::before {
-  background: darkorchid;
-}
 
-.hoverable-list > li {
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.hoverable-list .with-padding {
-  padding: 10px;
-}
-
-.hoverable-list.red > li > span:hover {
-  color: brown;
-}
-
-.hoverable-list.green > li:hover {
-  color: green;
-}
 
 .container.column {
   display: flex;
@@ -206,7 +142,7 @@ ol ol li::before {
     padding: 0px !important;
   }
   .container {
-    padding: 0 8px 0 8px !important;
+    padding: 4px 8px 0 8px !important;
   }
 
 

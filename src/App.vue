@@ -9,7 +9,7 @@
         </router-view>
       </div>
 
-      <bottom-bar />
+      <!-- <bottom-bar /> -->
   </div>
 </template>
 

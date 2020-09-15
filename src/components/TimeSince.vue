@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     moveHovered(e) {
-      this.$refs.hovered.style["margin-left"] = + e.offsetX - 50 + "px";
+      this.$refs.hovered.style["margin-left"] = + e.offsetX - 120 + "px";
     }
   },
   computed: {
