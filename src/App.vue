@@ -1,30 +1,46 @@
 <template>
   <div id="app">
 
-      <div class="content">
-        <router-view v-slot="{ Component }">
-          <transition name="fade" mode="out-in">
-              <component :is="Component"></component>
-          </transition>
-        </router-view>
-      </div>
+    <div class="content">
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component"></component>
+        </transition>
+      </router-view>
+    </div>
 
       <!-- <bottom-bar /> -->
   </div>
 </template>
 
 <script>
-import BottomBar from './components/BottomBar.vue'
 
 export default {
   name: 'App',
   components: {
-    BottomBar
   }
 }
 </script>
 
 <style>
+
+body::-webkit-scrollbar {
+  width: 0.4em;
+  height: 0.4em;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: darkorchid;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 8%;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
@@ -38,15 +54,11 @@ body {
   color: whitesmoke;
   font-size: 18px;
   font-family: Consolas,monaco,monospace; 
-  margin: 0px;
-  padding: 0px;
 }
 
 .content {
   transition: background-color 0.5s ease-out;
-  margin-bottom: 40px;
 }
-
 .content h1:hover {
   cursor: pointer;
 }

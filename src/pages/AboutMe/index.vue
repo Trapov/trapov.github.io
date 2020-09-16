@@ -3,8 +3,8 @@
     <h1>
       About me
     </h1>
-    <container fluid row>
-      <container fluid row column-if-md :size="6">
+    <container class="little-margin-bottom-offset" fluid row>
+      <container class="if-hover-hightlight" fluid row column-if-md :size="6">
         <me-card />
         <container :size="2">
           <p>
@@ -25,7 +25,7 @@
           </p>
         </container>
       </container>
-      <container :size="6">
+      <container class="if-hover-hightlight" :size="6">
         <skills />
       </container>
     </container>
@@ -67,7 +67,9 @@
 </script>
 
 <style scoped>
-
+.little-margin-bottom-offset {
+  margin-bottom: 10px;
+}
 .forward {
   font-size: larger;
   text-align: center;
@@ -89,7 +91,11 @@
   }
 
 }
-
+.if-hover-hightlight:hover {
+  transition: background-color 1s ease-in-out;
+  background-color: #32797159;
+  border-radius: 2%;
+}
 @media screen and (max-width: 950px) {
   .hoverable-list .with-padding {
     padding: 0px !important;
