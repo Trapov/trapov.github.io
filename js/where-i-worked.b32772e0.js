@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["where-i-worked"],{f0ab:function(e,n,i){"use strict";i.r(n);var l=i("7a23"),t={id:"where-i-worked"},c=Object(l["i"])("h1",null," Work ",-1),u=Object(l["i"])("div",null,[Object(l["i"])("p",null," WalletOne. "),Object(l["i"])("p",null," Avalab. "),Object(l["i"])("p",null," RussiaRunning "),Object(l["i"])("p",null," Solarlab (RTS-TENDER) ")],-1);function b(e,n){return Object(l["t"])(),Object(l["f"])("div",t,[c,u])}const r={};r.render=b;n["default"]=r}}]);
+//# sourceMappingURL=where-i-worked.b32772e0.js.map
