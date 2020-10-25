@@ -1,6 +1,13 @@
 <template>
   <div id="app">
 
+    <div class="select-language-container">
+      <select class="select-language" v-model="$i18n.locale">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+      </select>
+    </div>
+
     <div class="content">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
@@ -23,6 +30,21 @@ export default {
 </script>
 
 <style>
+select.select-language {
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  background-color: black;
+  color: whitesmoke;
+}
+
+
+.select-language-container {
+  display: inline-block;
+  padding: 4px;
+  border-radius: 8%;
+}
+
 
 body::-webkit-scrollbar {
   width: 0.4em;

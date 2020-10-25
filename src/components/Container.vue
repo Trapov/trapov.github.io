@@ -99,7 +99,7 @@ export default {
 
 @media screen and (max-width: 950px) {
   .container {
-    padding: 4px 8px 0 7px !important;
+    padding: 4px 2px 4px 2px !important;
   }
 }
 @media screen and (min-width: 950px) {

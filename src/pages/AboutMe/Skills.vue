@@ -1,7 +1,7 @@
 <template>
   <ol class="hoverable-list red"> 
     <li class="with-padding"> 
-      <span> 🎵 I'm sharp </span>
+      <span> 🎵 {{ $t('aboutMe.skills.sharp.header') }} </span>
         <ul class="hoverable-list green">
           <li> <span> ASP.NET Core </span> </li>
           <li> <span> EF Core </span> </li>
@@ -9,7 +9,7 @@
     </li> 
 
     <li class="with-padding"> 
-      <span> 🐍 Talk to snakes </span>
+      <span> 🐍 {{ $t('aboutMe.skills.python.header') }} </span>
         <ul class="hoverable-list green">
           <li> <span> fastapi/aiohttp </span> </li>
           <li> <span> ML (pyTorch and openCV) </span> </li>
@@ -22,7 +22,7 @@
         </ul>
     </li>
     <li class="with-padding"> 
-        <span> 🛠 Arch </span>
+        <span> 🛠 {{ $t('aboutMe.skills.arch.header') }}  </span>
           <ul class="hoverable-list green">
             <li> <span> DDD </span> </li>
             <li> <span> CQS/CQRS, Microservices </span> </li>

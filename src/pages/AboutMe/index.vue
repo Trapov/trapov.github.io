@@ -1,27 +1,27 @@
 <template>
   <container fluid column align-items="center">
     <h1>
-      About me
+      {{ $t('aboutMe.header') }}
     </h1>
     <container class="little-margin-bottom-offset" fluid row>
       <container class="if-hover-hightlight" fluid row column-if-md :size="6">
         <me-card />
-        <container :size="2">
+        <container  :size="2">
           <p>
-            🧑: Dmitry Afonin 
+            🧑: {{ $t('aboutMe.name') }}
           </p>
           <p>
-            🧓: <time-since :when="new Date('1995-02-14T02:00:00+0500')" /> old
+            🧓: <time-since :when="new Date('1995-02-14T02:00:00+0500')" />  {{ $t('aboutMe.old') }}
           </p>
           <p>
-            👩‍💻: Worked for <time-since :when="new Date('2017-02-14T02:00:00+0500')" />
+            👩‍💻:  {{ $t('aboutMe.workexp') }} <time-since :when="new Date('2017-02-14T02:00:00+0500')" />
           </p>
           <p>
-            🌍: Russia Orenburg
+            🌍: {{ $t('aboutMe.location') }}
           </p>
           <hr />
           <p>
-            💕: Jazz, videogames and making the machines go brrr-brrr
+            💕: {{ $t('aboutMe.hobbies') }}
           </p>
         </container>
       </container>
