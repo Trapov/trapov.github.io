@@ -5,7 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // import WhereIWorked from './pages/WhereIWorked.vue'
 
 const AboutMe = () => import(/* webpackChunkName: "about-me" */ './pages/AboutMe')
-const MyProjects = () => import(/* webpackChunkName: "my-projects" */ './pages/MyProjects.vue')
+const MyProjects = () => import(/* webpackChunkName: "my-projects" */ './pages/MyProjects')
 const WhereIWorked = () => import(/* webpackChunkName: "where-i-worked" */ './pages/WhereIWorked.vue')
 
 export default createRouter({
