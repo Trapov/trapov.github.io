@@ -1,0 +1,24 @@
+.hoverable-list ol {
+  list-style-type: none;
+}
+
+.hoverable-list > li {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.hoverable-list .with-padding {
+  padding: 10px;
+}
+
+.hoverable-list.red > li > span:hover {
+  background-color: aqua;
+  color: black;
+  font-weight: 1000;
+}
+
+.hoverable-list.green > li > span:hover {
+  background-color: aqua;
+  color: black;
+  font-weight: 1000;
+}

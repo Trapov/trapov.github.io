@@ -1,0 +1,39 @@
+.little-margin-bottom-offset {
+    margin-bottom: 10px;
+  }
+  .forward {
+    font-size: larger;
+    text-align: center;
+    cursor: pointer;
+    padding: 1px 50px 1px 50px;
+  }
+  
+  .forward:hover {
+    background-color: blueviolet;
+    border-radius: 5%;
+  }
+  
+  @media screen and (max-width: 350px) {
+    .avatar {
+      width: 116px !important;
+      height: 149px !important;
+  
+      background-size: 116px 149px !important;
+    }
+  
+  }
+  .if-hover-hightlight:hover {
+    transition: background-color 1s ease-in-out;
+    background-color: #32797159;
+    border-radius: 2%;
+  }
+  @media screen and (max-width: 950px) {
+    .hoverable-list .with-padding {
+      padding: 0px !important;
+    }
+    .hoverable-list > li{
+      cursor: pointer;
+      font-size: 16px !important;
+      margin-left: -15px;
+    }
+  }
